@@ -1,0 +1,30 @@
+[
+    {
+        "icon": "desktop",
+        "title": "Mobile Data Computer",
+        "text": "Accéder au MDC.",
+        "link": "https://mdc-fr.gta.world/",
+        "external_link": true
+    },
+    {
+        "icon": "file",
+        "title": "Générateur de rapport",
+        "text": "Accéder au générateur de rapport.",
+        "link": "/reports",
+        "external_link": false
+    },
+    {
+        "icon": "map",
+        "title": "Guide des rues",
+        "text": "Accéder au guide des rues.",
+        "link": "/map",
+        "external_link": false
+    },
+    {
+        "icon": "book",
+        "title": "Ressources utiles",
+        "text": "Accéder au ressources utiles.",
+        "link": "/ressources",
+        "external_link": false
+    }
+]

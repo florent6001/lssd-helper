@@ -1,0 +1,23 @@
+[
+    {
+		"type": "copy",
+		"disabled": false,
+		"id": "mirandaRights",
+		"title": "Miranda Rights",
+		"text": "You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be provided for you. Do you understand your rights?"
+	},
+    {
+		"type": "copy",
+		"disabled": false,
+		"id": "mirandaRights",
+		"title": "Miranda Rights",
+		"text": "You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be provided for you. Do you understand your rights?"
+	},
+	{
+		"type": "text",
+		"disabled": false,
+		"id": "pleaSystemBreakdown",
+		"title": "Plea System Breakdown",
+		"text": "All pleas must be collected from the arrested party on an <strong>OOC BASIS</strong> using /b chat. This is mandated by Legal Faction Management.<br/><br/><strong><span style='color: rgba(200,0,0,255)'>Guilty</span>:</strong> The person accepts the charges & calculated jail time, no post arrest submission will be submitted by the MDC.<br/><strong><span style='color: rgba(0,140,0,255)'>Not Guilty</span>:</strong> The person does not accept the charges & calculated jail time, a post arrest submission will be submitted by the MDC, the person is placed into jail for 9999 days.<br/><strong><span style='color: rgba(0,0,200,255)'>No-Contest</span>:</strong> The person does not accept nor deny the charges & calculated jail time, a post arrest submission will be submitted by the MDC, the person is placed into jail for the regular calculated time.<br/><strong><span style='color: rgba(200,0,0,255)'><u>Required Case</u></span>:</strong> The person is arrested for 9999 days, a post arrest submission will be submitted by the MDC.<br/><br/>There are <strong>three basic regulations</strong> for <strong><span style='color: rgba(200,0,0,255)'>Guilty</span></strong> & <strong><span style='color: rgba(0,0,200,255)'>No-Contest</span></strong> pleas:<br/><ul><li>No arrest can exceed 20 Days. 20 Days is the maximum time you can jail someone, no matter the charges. Do not charge for more then 20 Days.</li><li>Do not impound a vehicle for longer then 7 Days. This is the maximum amount of time for an impound.</li><li>Do not suspend someones license for longer then 7 Days. This is the maximum amount of time for a license suspension.</li></ul>"
+	}
+]

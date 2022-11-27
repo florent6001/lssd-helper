@@ -1,0 +1,82 @@
+[
+    {
+        "category_name": "Général",
+        "childrens": [
+            {
+                "icon": "home",
+                "title": "Tableau de bord",
+                "link": "/",
+                "external_link": false
+            }
+        ]
+    },
+    {
+        "category_name": "Application",
+        "childrens": [
+            {
+                "icon": "desktop",
+                "title": "Mobile Data Computer",
+                "link": "https://mdc-fr.gta.world/",
+                "external_link": true
+            },
+            {
+                "icon": "file",
+                "title": "Générateur de rapport",
+                "link": "/reports",
+                "external_link": false
+            },
+            {
+                "icon": "map",
+                "title": "Guide des rues",
+                "link": "/map",
+                "external_link": false
+            },
+            {
+                "icon": "book",
+                "title": "Ressources utiles",
+                "link": "/ressources",
+                "external_link": false
+            }
+        ]
+    },
+    {
+        "category_name": "Liens utiles",
+        "childrens": [
+            {
+                "image": "logo_LSSD",
+                "title": "LSSD",
+                "link": "https://sd.gta.world/",
+                "external_link": true
+            },
+            {
+                "image": "logo_LSPD",
+                "title": "LSPD",
+                "link": "https://pd.gta.world/",
+                "external_link": true
+            },
+            {
+                "image": "logo_LSFD",
+                "title": "LSFD",
+                "link": "https://fd.gta.world/",
+                "external_link": true
+            }
+        ]
+    },
+    {
+        "category_name": "Configuration",
+        "childrens": [
+            {
+                "icon": "gear",
+                "title": "Paramètres",
+                "link": "/settings",
+                "external_link": false
+            },
+            {
+                "icon": "rotate",
+                "title": "Changelogs",
+                "link": "/changelogs",
+                "external_link": false
+            }
+        ]
+    }
+]

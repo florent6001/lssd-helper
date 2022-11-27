@@ -1,26 +1,24 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+  background-image: url('/img/logo_LSSD.png');
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 2000px rgba(8, 14, 4, 0.83);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.leaflet-container {
+  width: 100%;
+  height: 100%;
 }
 
-* {
-  box-sizing: border-box;
+label {
+  @apply block pb-1;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+input, select {
+  @apply border rounded h-14 p-3 my-3 inline-block text-black;
 }
