@@ -36,7 +36,7 @@ export default function Settings() {
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-black">
                                 <FontAwesomeIcon icon={'user'} />
                             </div>
-                            <input {...register('name')} type="text" className="w-full pl-10" placeholder="Prénom Nom" />
+                            <input {...register('name')} type="text" className="w-full border rounded h-14 p-3 my-3 inline-block pl-10 text-black" placeholder="Prénom Nom" />
                         </div>
                     </div>
                     <div className="w-full md:w-2/5 md:mx-5 my-3">
@@ -45,11 +45,11 @@ export default function Settings() {
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-black">
                                 <FontAwesomeIcon icon={'id-badge'} />
                             </div>
-                            <select {...register('rank')}  className="w-full pl-10">
+                            <select {...register('rank')}  className="w-full border rounded h-14 p-3 my-3 inline-block pl-10 text-black">
                                 <option value=""> -- Sélectionner un grade -- </option>
                                 {Ranks.map((rank, index) => {
                                     return (
-                                        <option key={rank} value={index}>
+                                        <option key={index} value={rank}>
                                             {rank}
                                         </option>
                                     )

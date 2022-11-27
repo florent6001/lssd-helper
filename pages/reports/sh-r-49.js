@@ -1,6 +1,9 @@
 const moment = require('moment')
 import { useForm } from "react-hook-form";
+import streets from "../../data/streets.json";
+import districts from "../../data/districts.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default function ShR49() {
 
@@ -20,9 +23,9 @@ export default function ShR49() {
   [font=arial][color=black][size=105][b]I. Informations de dépôt[/b][/size]
 
   [al][b]Date et heure : [/b]^^time^^, ^^date^^
-  [al][b]Localisation : [/b]Abattoir Avenue, Alamo Sea
-  [al][b]Déposé par : [/b]Adjoint du shérif John Doe
-  [al][b]Matricule : [/b] #5151
+  [al][b]Localisation : [/b]^^street^^, ^^district^^
+  [al][b]Déposé par : [/b]^^rank^^ ^^name^^
+  [al][b]Matricule : [/b] #^^matricule^^
 
   [font=arial][color=black][size=105][b]II. Suspect(s)[/b][/size]
 
@@ -53,13 +56,18 @@ export default function ShR49() {
   `
 
   const { register, handleSubmit } = useForm();
-  const fields = ['date', 'time']
+  const fields = ['date', 'time', 'street', 'district']
 
   const generateReport = data => {
     console.log(data)
+
     fields.forEach(element => {
       bbcode = bbcode.replace('^^' + element + '^^', data[element])
     });
+
+    bbcode = bbcode.replace('^^rank^^', localStorage.getItem('rank'))
+    bbcode = bbcode.replace('^^name^^', localStorage.getItem('name'))
+    bbcode = bbcode.replace('^^matricule^^', localStorage.getItem('matricule'))
     console.log(bbcode)
   }
 
@@ -76,6 +84,32 @@ export default function ShR49() {
             <div className="inline-block mx-5">
             <label htmlFor="time">Heure</label>
               <input {...register('time')} type="text" id="time" className="text-black" value={ moment().locale('fr').format('k:mm') } />
+            </div>
+          </div>
+
+          <h2 className="mx-5 text-2xl pb-3 pt-10">Localisation</h2>
+          <div>
+            <div className="inline-block mx-5">
+              <label htmlFor="district">Quartier</label>
+              <input list="district" {...register('district')} />
+              <datalist id="district">
+                {districts.map((district) => {
+                  return (
+                    <option key={district} value={district}>{district}</option>
+                  )
+                })}
+              </datalist>
+            </div>
+            <div className="inline-block mx-5">
+              <label htmlFor="street">Rue</label>
+              <input {...register('street')} list="street" />
+              <datalist id="street">
+                {streets.map((street) => {
+                  return (
+                    <option key={street} value={street}>{street}</option>
+                  )
+                })}
+              </datalist>
             </div>
           </div>
 
