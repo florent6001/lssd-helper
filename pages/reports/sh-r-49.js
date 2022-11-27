@@ -22,7 +22,7 @@ export default function ShR49() {
 
   [font=arial][color=black][size=105][b]I. Informations de dépôt[/b][/size]
 
-  [al][b]Date et heure : [/b]^^time^^, ^^date^^
+  [al][b]Date et heure : [/b]^^date^^, ^^time^^
   [al][b]Localisation : [/b]^^street^^, ^^district^^
   [al][b]Déposé par : [/b]^^rank^^ ^^name^^
   [al][b]Matricule : [/b] #^^matricule^^
