@@ -73,7 +73,7 @@ export default function ShR49() {
 
   return (
     <div className="pb-16 py-12 mx-auto max-w-6xl px-5 text-white">
-        <h1 className="text-4xl mb-10"><FontAwesomeIcon icon={'gun'} /> &nbsp; Rapport d'incident SH-R-49</h1>
+        <h1 className="text-4xl mb-10"><FontAwesomeIcon icon={'gun'} /> &nbsp; Rapport d&apos;incident SH-R-49</h1>
         <form onSubmit={handleSubmit(generateReport)}>
           <h2 className="mx-5 text-2xl pb-3">Section général</h2>
           <div>
