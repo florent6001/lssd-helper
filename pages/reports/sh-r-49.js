@@ -394,7 +394,7 @@ export default function ShR49() {
                   {...register(`lieu_casier`)}>
                   <option value="Station du shérif de Paleto Bay">Station du shérif de Paleto Bay</option>
                   <option value="Station du shérif de Davis">Station du shérif de Davis</option>
-                  <option value="Division d'enquête de Davis">Division d'enquête de Davis</option>
+                  <option value="Division d&apos;enquête de Davis">Division d&apos;enquête de Davis</option>
                   <option value="TTCF">TTCF</option>
                 </select>
               </div>
