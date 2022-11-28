@@ -11,7 +11,7 @@ export default function Reports() {
                 &nbsp; Générateur de rapport
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {ReportType.reverse().map((report) => {
+                {ReportType.map((report) => {
                     return (
                       <Link key={report.title} target={report.external_link ? '_blank' : ''} href={report.link} className="mx-auto w-full text-center rounded p-5 text-primary bg-white font-semibold">
                           <FontAwesomeIcon icon={report.icon} size="5x" className="inline-block" />
