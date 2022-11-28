@@ -323,10 +323,11 @@ export default function ShR49() {
                     </div>
                     <div className="inline-block mx-5">
                       <select {...register(`peoples.${index}.job`)}>
+                        <option value='Département de police (LSPD)'>Département de police (LSPD)</option>
+                        <option value="Département de secours (LSFD)">Département de secours (LSFD)</option>
+                        <option value='Bureau du procureur'>Bureau du procureur</option>
+                        <option value='Agent fédéral (FBI)'>Agent fédéral (FBI)</option>
                         <option value='Personne civile'>Personne civile</option>
-                          <option value='Département de police (LSPD)'>Département de police (LSPD)</option>
-                          <option value='Agent fédéral (FBI)'>Agent fédéral (FBI)</option>
-                          <option value='Bureau du procureur'>Bureau du procureur</option>
                       </select>
                     </div>
                     <button type="button" onClick={() => peopleRemove(index)}>
@@ -392,10 +393,10 @@ export default function ShR49() {
               <div className="inline-block mx-5">
                 <select
                   {...register(`lieu_casier`)}>
-                  <option value="Station du shérif de Paleto Bay">Station du shérif de Paleto Bay</option>
                   <option value="Station du shérif de Davis">Station du shérif de Davis</option>
                   <option value="Division d&apos;enquête de Davis">Division d&apos;enquête de Davis</option>
                   <option value="TTCF">TTCF</option>
+                  <option value="Station du shérif de Paleto Bay">Station du shérif de Paleto Bay</option>
                 </select>
               </div>
             </div>
