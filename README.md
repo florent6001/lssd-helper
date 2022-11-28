@@ -3,7 +3,7 @@
 LSSD-Helper is a tool that help LSSD on GTA.World server, generating paperwork with forms.
 ## Demo
 
-https://florent6001.github.io/lssdhelper/
+http://lssd-helper.vercel.app/
 ## Installation
 
 Install the project with yarn

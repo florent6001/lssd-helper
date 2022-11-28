@@ -98,7 +98,7 @@ export default function ShR49() {
 
     if(data.officers.length > 0) {
       bbcode += `
-      [al][size=105][b]Adjoints impliqués (inclure uniquement les adjoints qui ont utilisé la force létale)[/b][/size]
+      [al][size=105][b]Adjoints impliqués (inclure uniquement les adjoints qui ont utilisé la force létale)[/b][/size][/al]
       `
 
       data.officers.forEach((officer) => {
@@ -121,18 +121,24 @@ export default function ShR49() {
     bbcode += `
       [font=arial][color=black][size=105][b]IV. Déclarations et preuves[/b][/size]
       [al][size=105][b]Récit des faits[/b][/size][/al]
-      [thread]${data.description}[/thread][/al]
+      [thread]${data.description}[/thread]
+      [al][size=105][b](( /do des dashcams et bodycam ))[/b][/size][/al]
+      [thread][color=#6b21a8]${data.do}[/color][/thread][/al]
     `
 
-    if(data.dashcams.length > 0 || data.descriptions.length > 0 || data.screenshots.length > 0) {
-      bbcode += `
-      [al][size=105][b]Éléments de preuves[/b][/size][/al]
-      `
+    data.dashcams.forEach((dashcam) => {
+      bbcode += `[spoiler=Dashcam/bodycam]${dashcam.link}[/spoiler]
+    `
+    })
 
-      data.dashcams.forEach((dashcam) => {
-        bbcode += `[spoiler=Dashcam/bodycam]${dashcam.link}[/spoiler]
-      `
-      })
+    bbcode += `
+    [al][size=105][b]Éléments de preuves[/b][/size][/al]
+    `
+    
+    bbcode += `[al][b]Casier de preuves n° : ${data.num_casier}[/b]
+    [al][b]Lieu du dépôt : [/b] ${data.lieu_casier}[/al]\n\n`
+
+    if(data.descriptions.length > 0 || data.screenshots.length > 0) {
 
       data.descriptions.forEach((description, index) => {
         bbcode += `[spoiler=Description #${index + 1}]${description.text}[/spoiler]
@@ -317,9 +323,10 @@ export default function ShR49() {
                     </div>
                     <div className="inline-block mx-5">
                       <select {...register(`peoples.${index}.job`)}>
-                        <option value='Civil'>Civil</option>
-                          <option value='LSPD'>LSPD</option>
-                          <option value='FBI'>FBI</option>
+                        <option value='Personne civile'>Personne civile</option>
+                          <option value='Département de police (LSPD)'>Département de police (LSPD)</option>
+                          <option value='Agent fédéral (FBI)'>Agent fédéral (FBI)</option>
+                          <option value='Bureau du procureur'>Bureau du procureur</option>
                       </select>
                     </div>
                     <button type="button" onClick={() => peopleRemove(index)}>
@@ -343,6 +350,55 @@ export default function ShR49() {
               <label htmlFor="description">Récit des faits</label>
               <textarea required {...register('description')} id="description" rows="5" className="w-full rounded text-black p-3"></textarea>
             </div>
+
+            <div className="mx-5 pt-5">
+              <label htmlFor="do">(( /do dashcam/bodycam ))</label>
+              <textarea required {...register('do')} id="do" rows="5" className="w-full rounded text-purple-800 p-3"></textarea>
+            </div>
+
+            <div>
+              <button type="button" className="bg-secondary py-3 px-5 mx-5 my-3 rounded text-black font-bold" onClick={() => dashcamAppend({ 'link': 'https://youtube.com/'})}>
+                (( Ajouter une vidéo ))
+              </button>
+
+              {dashcamFields.map((field, index) => {
+                return (
+                  <div key={index} className="inline-block">
+                    <div className="flex" key={index}>
+                      <div className="inline-block justify-center mx-5">
+                        <input
+                          type="text"
+                          {...register(`dashcams.${index}.link`)} 
+                        />
+                      </div>
+                      <button type="button" onClick={() => dashcamRemove(index)}>
+                        <FontAwesomeIcon icon="minus" className="bg-red-500 rounded-full p-3 block" />
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}
+              </div>
+          </div>
+
+          <div>
+            <h2 className="pt-5 pb-5 mx-5">
+            Casier de preuves
+            </h2>
+            <div>
+              <div className="inline-block mx-5">
+                <input type="text" {...register('num_casier')} />
+              </div>
+              <div className="inline-block mx-5">
+                <select
+                  {...register(`lieu_casier`)}>
+                  <option value="Station du shérif de Paleto Bay">Station du shérif de Paleto Bay</option>
+                  <option value="Station du shérif de Davis">Station du shérif de Davis</option>
+                  <option value="Division d'enquête de Davis">Division d'enquête de Davis</option>
+                  <option value="TTCF">TTCF</option>
+                </select>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -350,9 +406,6 @@ export default function ShR49() {
             Élement de preuves
             </h2>
             <div>
-              <button type="button" className="bg-secondary py-3 px-5 mx-5 rounded text-black font-bold" onClick={() => dashcamAppend({ 'link': 'https://youtube.com/'})}>
-                Ajouter une dashcam
-              </button>
               <button type="button" className="bg-secondary py-3 px-5 mx-5 rounded text-black font-bold" onClick={() => descriptionAppend()}>
                 Ajouter une description
               </button>
@@ -361,25 +414,6 @@ export default function ShR49() {
               </button>
             </div>
           </div>
-
-          {dashcamFields.map((field, index) => {
-            return (
-              <div key={index}>
-                <label className="pt-5 mx-5">Dashcam #{index +1}</label>
-                <div className="flex" key={index}>
-                  <div className="inline-block justify-center mx-5 ">
-                    <input
-                      type="text"
-                      {...register(`dashcams.${index}.link`)} 
-                    />
-                  </div>
-                  <button type="button" onClick={() => dashcamRemove(index)}>
-                    <FontAwesomeIcon icon="minus" className="bg-red-500 rounded-full p-3 block" />
-                  </button>
-                </div>
-              </div>
-            )
-          })}
 
           {descriptionFields.map((field, index) => {
             return (
