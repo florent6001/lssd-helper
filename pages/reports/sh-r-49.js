@@ -304,7 +304,7 @@ export default function ShR49() {
           <div>
             <div className="inline-block">
               <h2 className="pt-5 pb-5 mx-5">
-              Tiers personnes (inclure uniquement les employés d'autres départements ou civils connus)
+              Tiers personnes (inclure uniquement les employés d&apos;autres départements ou civils connus)
               </h2>
               {peopleFields.map((field, index) => {
                 return (
