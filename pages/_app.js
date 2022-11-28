@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import Layout from '../components/layout'
 const { library, config } = require('@fortawesome/fontawesome-svg-core');
 import * as Icons from '@fortawesome/free-solid-svg-icons';
+import Head from 'next/head';
 
 const iconList = Object.keys(Icons)
   .filter((key) => key !== 'fas' && key !== 'prefix')

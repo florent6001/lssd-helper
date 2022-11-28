@@ -25,6 +25,7 @@ export default function Layout({ children }) {
 
     return (
         <>
+            <link rel="icon" href="/favicon.ico" />
             <div className="flex h-screen bg-gray-300 transition duration-1000">
                 <aside className={`transition duration-1000 z-[999] md:block w-64 overflow-y-auto border-r border-none bg-primary flex-shrink-0 md:mt-0 ${navbarIsOpen ? 'fixed inset-y-0 mt-16 md:relative' : 'hidden'}`}>
                     <div className="py-4 text-gray-400">
