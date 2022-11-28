@@ -255,10 +255,15 @@ export default function ShR49() {
           <div>
             <div className="inline-block mx-5">
               <label htmlFor="weapon">Arme utilisée</label>
-              <select required={true} {...register('weapon')} id="weapon" className="text-black">
+              <input list="weapons" {...register('weapon')} className="text-black" id="weapon"></input>
+              <datalist required={true} id="weapons">
                 <option value="Sig Sauer">Sig Sauer</option>
-                <option value="Glock 18">Glock 18</option>
-              </select>
+                <option value="Glock 17">Glock 17</option>
+                <option value="Smith & Wesson MP9">Smith & Wesson MP9</option>
+                <option value="Colt M4">Colt M4</option>
+                <option value="Remington 870">Remington 870</option>
+                <option value="Carabine AR-15">Carabine AR-15</option>
+              </datalist>
             </div>
             <div className="inline-block mx-5">
             <label htmlFor="ammo">Nombre de munitions</label>
